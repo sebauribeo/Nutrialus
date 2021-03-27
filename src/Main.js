@@ -1,7 +1,12 @@
 import './main.css'
-import React from 'react';
+import React, { useEffect } from "react";
 
 function Main() {
+    useEffect(() => {
+        fetch("https://0q27loouph.execute-api.us-east-1.amazonaws.com/")
+        .then((res) => res.json())
+        .then((response) => console.log(response))
+    }, [])
     return (
         <div className="main">
 
