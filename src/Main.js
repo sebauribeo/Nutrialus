@@ -4,9 +4,15 @@ import React, { useEffect, useState } from "react";
 
 
 function Main() {
+
+// FUNCION PARA REFRESCAR PRESIONANDO EL BOTON
+ 
   function refreshPage() {
     window.location.reload(false);
   }
+
+//LLAMADO DE API REST 
+
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [response, setItems] = useState([]);
@@ -15,7 +21,7 @@ function Main() {
         fetch("https://0q27loouph.execute-api.us-east-1.amazonaws.com/")
         .then(res => res.json())
         .then((response) => {
-          console.log(response)
+          console.log(response);
           setIsLoaded(true);
           setItems(response);
         },
@@ -33,9 +39,13 @@ function Main() {
       return (
         <div className="main">
 
+{/* HEADER */}
+
             <header className="main__header">
               <h1>Nutrial<strong>us</strong></h1>
             </header>
+
+{/* SECCION PARA VISUALIZAR API REST */}
 
             <section className="main__section">
                 <img src={response.image} alt="..." className="main__img"></img>
@@ -51,15 +61,8 @@ function Main() {
                 </div>
                 <a href="..." ><button className="main__button" onClick={refreshPage}>Siguiente busqueda</button></a>
             </section>
-
-            
         </div>
-
       );
     }
   }
-    
-    
-
-
 export default Main
