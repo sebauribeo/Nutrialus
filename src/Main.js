@@ -4,6 +4,9 @@ import React, { useEffect, useState } from "react";
 
 
 function Main() {
+  function refreshPage() {
+    window.location.reload(false);
+  }
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [response, setItems] = useState([]);
@@ -31,29 +34,22 @@ function Main() {
         <div className="main">
 
             <header className="main__header">
-                <h1>
-                    <span>N</span>
-                    <span>u</span>
-                    <span>t</span>
-                    <span>r</span>
-                    <span>i</span>
-                    <span>a</span>
-                    <span>l</span>
-                    <span>u</span>
-                    <span>s</span>
-                </h1>
+              <h1>Nutrial<strong>us</strong></h1>
             </header>
 
             <section className="main__section">
                 <img src={response.image} alt="..." className="main__img"></img>
-                <div>
-                    <h5>Nombre: {response.name}</h5>
-                    <h5>Email: {response.email}</h5>
-                    <h5>Telefono: {response.phone}</h5>
-                    <a href="http://localhost:3000/" >
-                    <button className="main__button">Siguiente busqueda</button>
-                    </a>
+                <div className="main__div">
+                    <h4>Nombre:</h4>
+                    <p>{response.name}</p>
+                    <h4>Email:</h4>
+                    <p>{response.email}</p>
+                    <h4>Telefono:</h4>
+                    <p>{response.phone}</p>
+                    <h4>Nutricionista:</h4>
+                    <p>{response.nutritionist}</p>
                 </div>
+                <a href="..." ><button className="main__button" onClick={refreshPage}>Siguiente busqueda</button></a>
             </section>
 
             

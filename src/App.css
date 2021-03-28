@@ -1,9 +1,40 @@
-.App {
+body{
+  background: #000;
+  overflow: hidden;
+  height: 100%;
   display: flex;
   align-content: center;
   justify-content: center;
-  text-align: center;
-  background-color: rgb(0, 0, 0);
-  height: 100vh;
+}
+section{
+  height: 100%;  
+}
+span{
+  position: absolute;
+  pointer-events: none;
+  background-color: #ffffff41;
+  animation: animate 5s linear infinite;
+  border-radius: 50%;
+  box-shadow: 0 0 20px 0 yellow;
+  z-index: -3;
+
+}
+@keyframes animate{
+  0%{
+    transform: scale(0) translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10%{
+    opacity: 1;
+
+  }
+  90%{
+    opacity: 1;
+
+  }
+  100%{
+    transform: scale(1) translateY(-500%) rotate(360deg);
+    opacity: 0;
+  }
 }
 
